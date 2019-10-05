@@ -3,16 +3,40 @@ using System;
 using System.Collections.Generic;
 using TrackingInfo.Controllers;
 using TrackingInfo.Models;
+using TrackingInfo.Services;
+using TrackingInfoTesting.MockServices;
 using Xunit;
 
 namespace TrackingInfoTesting
 {
     public class ProductListTesting
     {
+        private IFirebaseService _firebaseService;
+
+        public ProductListTesting()
+        {
+            _firebaseService = new FirebaseServiceMock();
+        }
+
+        [Fact]
+        public void GetUserOrders()
+        {
+            var controller = new OrderListController(_firebaseService);
+            var orders = controller.GetUserOrders(1).Value;
+
+            var expectedList = new List<Order>()
+            {
+                new Order() { Id = 1, UserId = 100 }
+            };
+
+            Assert.Single(orders);
+            Assert.Equal(expectedList, orders);
+        }
+
         [Fact]
         public void ParseOrdersList_ShouldReturnOne()
         {
-            var controller = new ProductListController();
+            var controller = new OrderListController(_firebaseService);
 
             var expectedList = new List<Order>()
             {
@@ -29,7 +53,7 @@ namespace TrackingInfoTesting
         [Fact]
         public void ParseOrdersList_ShouldReturnEmpty()
         {
-            var controller = new ProductListController();
+            var controller = new OrderListController(_firebaseService);
 
             var emptyList = new List<Order>() { };
 

@@ -21,7 +21,7 @@ namespace TrackingInfo.Controllers
             _firebaseService = firebaseService;
         }
 
-        [HttpGet]
+        [HttpGet("[action]")]
         public ActionResult<List<Order>> GetUserOrders(int userId)
         {
             try

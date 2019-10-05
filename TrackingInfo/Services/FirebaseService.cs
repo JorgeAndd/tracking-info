@@ -10,7 +10,7 @@ namespace TrackingInfo.Services
         public string GetUserOrder(int userId)
         {
             // TODO: implement filter to get only user orders
-            var json = client.GetStringAsync(baseUrl + "/orders").Result;
+            var json = client.GetStringAsync(baseUrl + "/orders.json").Result;
 
             return json;
         }

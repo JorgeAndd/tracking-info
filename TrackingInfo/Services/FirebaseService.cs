@@ -14,5 +14,11 @@ namespace TrackingInfo.Services
 
             return json;
         }
+
+        public string GetOrderDetails(int orderId)
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 }

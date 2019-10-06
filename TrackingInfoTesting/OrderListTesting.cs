@@ -9,11 +9,11 @@ using Xunit;
 
 namespace TrackingInfoTesting
 {
-    public class ProductListTesting
+    public class OrderListTesting
     {
         private IFirebaseService _firebaseService;
 
-        public ProductListTesting()
+        public OrderListTesting()
         {
             _firebaseService = new FirebaseServiceMock();
         }

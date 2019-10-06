@@ -10,5 +10,17 @@ namespace TrackingInfo.Models
         public int Id { get; set; }
         public string TrackingNumber { get; set; }
         public List<TrackingStep> TrackingSteps { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var detail = obj as OrderDetail;
+
+            if (detail == null)
+            {
+                return false;
+            }
+            
+            return this.Id == detail.Id && this.TrackingNumber == detail.TrackingNumber && this.TrackingSteps.SequenceEqual(detail.TrackingSteps);
+        }
     }
 }

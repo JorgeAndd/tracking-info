@@ -22,9 +22,9 @@ namespace TrackingInfo.Controllers
         }
         public OrderDetail ParseOrderDetails(string jsonData)
         {
-            var orders = JsonConvert.DeserializeObject<OrderDetail>(jsonData);
+            var details = JsonConvert.DeserializeObject<OrderDetail>(jsonData);
 
-            return orders;
+            return details;
         }
     }
 }

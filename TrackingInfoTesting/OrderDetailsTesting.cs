@@ -30,11 +30,11 @@ namespace TrackingInfoTesting
                 TrackingNumber = "LB000x000",
                 TrackingSteps = new List<TrackingStep>()
                 {
-                    new TrackingStep() { Date = new DateTime(2019, 10, 01, 08, 00, 00), Step = Step.Bought },
-                    new TrackingStep() { Date = new DateTime(2019, 10, 01, 08, 30, 00), Step = Step.Paid },
-                    new TrackingStep() { Date = new DateTime(2019, 10, 01, 16, 00, 00), Step = Step.Sent },
-                    new TrackingStep() { Date = new DateTime(2019, 10, 01, 16, 00, 00), Step = Step.InTransit },
-                    new TrackingStep() { Date = new DateTime(2019, 10, 06, 10, 00, 00), Step = Step.Delivered }
+                    new TrackingStep() { Date = new DateTime(2019, 10, 01, 08, 00, 00), Status = Status.Bought },
+                    new TrackingStep() { Date = new DateTime(2019, 10, 01, 08, 30, 00), Status = Status.Paid },
+                    new TrackingStep() { Date = new DateTime(2019, 10, 01, 16, 00, 00), Status = Status.Sent },
+                    new TrackingStep() { Date = new DateTime(2019, 10, 01, 16, 00, 00), Status = Status.InTransit },
+                    new TrackingStep() { Date = new DateTime(2019, 10, 06, 10, 00, 00), Status = Status.Delivered }
                 }
             };
 

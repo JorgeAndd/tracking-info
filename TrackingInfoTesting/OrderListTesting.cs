@@ -26,7 +26,7 @@ namespace TrackingInfoTesting
 
             var expectedList = new List<Order>()
             {
-                new Order() { Id = 1, UserId = 100 }
+                new Order() { Id = 1, UserId = 100, LastStatus = Status.InTransit }
             };
 
             Assert.Single(orders);

@@ -29,6 +29,14 @@ namespace TrackingInfo.Controllers
                 var firebaseJson = _firebaseService.GetUserOrder(userId);
                 var orders = ParseOrdersList(firebaseJson);
 
+                foreach (var order in orders)
+                {
+                    var detailsJson = _firebaseService.GetOrderDetails(order.Id);
+                    var details = JsonConvert.DeserializeObject<OrderDetail>(detailsJson);
+
+                    order.LastStatus = details.TrackingSteps.Last().Status;
+                }
+
                 return orders;
             }
             catch (Exception)

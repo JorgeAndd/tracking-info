@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TrackingInfo.Models
 {
-    public enum Step
+    public enum Status
     {
         Bought,
         Paid,
@@ -17,7 +17,7 @@ namespace TrackingInfo.Models
 
     public class TrackingStep
     {
-        public Step Step { get; set; }
+        public Status Status { get; set; }
         public DateTime Date { get; set; }
 
         public override bool Equals(object obj)
@@ -29,7 +29,7 @@ namespace TrackingInfo.Models
                 return false;
             }
 
-            return this.Step == step.Step && DateTime.Compare(this.Date, step.Date) == 0;
+            return this.Status == step.Status && DateTime.Compare(this.Date, step.Date) == 0;
         }
     }
 

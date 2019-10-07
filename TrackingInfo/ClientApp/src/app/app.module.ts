@@ -5,8 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// Components
 import { AppComponent } from './app.component';
 import { OrdersListComponent } from './components/orders-list/orders-list.component';
+
+// Services
+import { OrdersListService } from './services/orders-list.service';
 
 @NgModule({
     declarations: [
@@ -22,7 +26,9 @@ import { OrdersListComponent } from './components/orders-list/orders-list.compon
             { path: '', component: OrdersListComponent, pathMatch: 'full' },
         ])
     ],
-    providers: [],
+    providers: [
+        OrdersListService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

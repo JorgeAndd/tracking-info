@@ -17,7 +17,9 @@ namespace TrackingInfo.Services
 
         public string GetOrderDetails(int orderId)
         {
-            throw new System.NotImplementedException();
+            var json = client.GetStringAsync(baseUrl + "/order-details/" + orderId + ".json").Result;
+
+            return json;
         }
 
     }

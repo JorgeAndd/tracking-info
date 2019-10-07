@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { OrdersListService } from '../../services/orders-list.service';
+import { OrdersService } from '../../services/orders.service';
 import { Order } from '../../models/order/orderModel';
 import { Status } from '../../models/order/statusModel';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-orders-list',
@@ -12,7 +13,8 @@ export class OrdersListComponent implements OnInit {
     public orders: Order[] = [];
 
     constructor(
-        private ordersListService: OrdersListService
+        private ordersListService: OrdersService,
+        private router: Router
     ) { }
 
     ngOnInit() {
@@ -30,5 +32,9 @@ export class OrdersListComponent implements OnInit {
 
     public getStatusLabel(order: Order): string {
         return Status.toString(order.lastStatus);
+    }
+
+    public goToDetails(order: Order): void {
+        this.router.navigate(['details'], { state: { data: { orderId: order.id } } });
     }
 }

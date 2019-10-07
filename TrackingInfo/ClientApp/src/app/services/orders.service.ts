@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders, HttpClient } from "@angular/common/http";
+import { HttpHeaders, HttpClient, HttpParams } from "@angular/common/http";
 
 import { Observable } from "rxjs/Observable";
 import { Order } from '../models/order/orderModel';
+import { OrderDetail } from '../models/order/orderDetailModel';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrdersListService {
+export class OrdersService {
 
     constructor(private http: HttpClient) { }
 
@@ -20,5 +21,11 @@ export class OrdersListService {
         }
 
         return this.http.get<Order[]>('api/OrderList/GetUserOrders');
+    }
+
+    getOrderDetails(orderId: number): Observable<OrderDetail> {
+        const params = new HttpParams().set('orderId', orderId.toString());
+
+        return this.http.get<OrderDetail>('api/OrderDetails/GetOrderDetails', { params });
     }
 }

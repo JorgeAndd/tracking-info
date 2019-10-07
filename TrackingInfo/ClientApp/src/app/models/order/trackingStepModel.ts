@@ -1,6 +1,6 @@
-import { Status } from './statusModel';
+import { Status, StatusEnum } from './statusModel';
 
 export class TrackingStep {
-    public status: Status;
+    public status: StatusEnum;
     public date: Date
 }

@@ -8,8 +8,6 @@ export enum StatusEnum {
 }
 
 export class Status {
-    public status: StatusEnum
-
     public static toString(status: StatusEnum): string {
         switch (status) {
             case StatusEnum.Bought:

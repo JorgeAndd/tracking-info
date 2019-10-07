@@ -20,6 +20,24 @@ namespace TrackingInfo.Controllers
         {
             _firebaseService = firebaseService;
         }
+
+        [HttpGet("[action]")]
+        public ActionResult<OrderDetail> GetOrderDetails(int orderId)
+        {
+            try
+            {
+                var firebaseJson = _firebaseService.GetOrderDetails(orderId);
+                var order = ParseOrderDetails(firebaseJson);
+
+                return order;
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error getting order list");
+            }
+
+        }
+
         public OrderDetail ParseOrderDetails(string jsonData)
         {
             var details = JsonConvert.DeserializeObject<OrderDetail>(jsonData);

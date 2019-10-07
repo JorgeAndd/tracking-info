@@ -8,14 +8,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Components
 import { AppComponent } from './app.component';
 import { OrdersListComponent } from './components/orders-list/orders-list.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 // Services
-import { OrdersListService } from './services/orders-list.service';
+import { OrdersService } from './services/orders.service';
 
 @NgModule({
     declarations: [
         AppComponent,
-        OrdersListComponent
+        OrdersListComponent,
+        OrderDetailsComponent
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,10 +26,11 @@ import { OrdersListService } from './services/orders-list.service';
         NgbModule,
         RouterModule.forRoot([
             { path: '', component: OrdersListComponent, pathMatch: 'full' },
+            { path: 'details', component: OrderDetailsComponent }
         ])
     ],
     providers: [
-        OrdersListService
+        OrdersService
     ],
     bootstrap: [AppComponent]
 })

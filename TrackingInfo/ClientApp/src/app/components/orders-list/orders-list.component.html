@@ -8,7 +8,7 @@
       <div class="panel-heading">Pedido # {{order.id}}</div>
       <div class="panel-body">
         {{getStatusLabel(order)}}
-        <button class="btn btn-warning pull-right">
+        <button class="btn btn-warning pull-right" (click)="goToDetails(order)">
           <i class="fa fa-truck"></i>
           Rastrear pedido
         </button>

@@ -31,7 +31,8 @@ Foram criados apenas dois componentes, para demonstrar as funcionalidades básic
 
 O frontend realiza as comunicações com o backend por meio de chamadas REST, sendo no caso desse protótipo, exclusivamente com métodos GET.
 
-
+![Listagem de Pedidos](https://github.com/JorgeAndd/tracking-info/blob/master/TrackingInfo/Prints/print1.png?raw=true)
+![Detalhes de Pedido](https://github.com/JorgeAndd/tracking-info/blob/master/TrackingInfo/Prints/print2.png?raw=true)
 
 # Execução do projeto
 Para a execução do projeto, é necessário o Visual Studio, recomendando-se a versão 2019, seguindo os seguintes passos:

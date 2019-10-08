@@ -2,7 +2,7 @@
 
 Esse projeto apresenta um protótipo para um sistema de rastreio de encomendas para um e-commerce.
 
-O projeto foi desenvolvido em .NET Core e Angular 8, utilizando como base o template disponibilizado pelo Visual Studio.
+O projeto foi desenvolvido em .NET Core e Angular 8, utilizando como base o template disponibilizado pelo Visual Studio para projetos SAP.
 
 ## Funcionalidades
 O projeto tem como funcionalidades básicas:
@@ -16,7 +16,7 @@ O projeto tem como funcionalidades básicas:
 O backend do projeto é desenvolvido em C# com .NET Core.
 A persistência de dados é feita com Firebase, por permitir uma rápida prototipação de estruturas de dados, utilizando formato JSON.
 
-Para esse protótipo, foram criadas apenas chamadas GET, tanto para a partir do Backend para o Firebase, quanto do frontend para o Backend.
+Para esse protótipo, foram utilizadas apenas chamadas GET, tanto para a partir do Backend para o Firebase, quanto do frontend para o Backend.
 
 As principais funcionalidades do backend foram desenvolvidas com auxílio de testes unitários com framework **XUnit**
 
